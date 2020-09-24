@@ -2,6 +2,14 @@
 
 This little tool allow you to manage the red back led of your Thinkpad.
 
+## Build
+
+To build the tool, just type the following command:
+
+```bash
+go build thinkpad-led.go
+```
+
 ## Usage
 
 ```bash
