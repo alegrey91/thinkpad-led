@@ -1,6 +1,6 @@
 # thinkpad-led
 
-This little tool allow you to manage the red back led of your Thinkpad.
+This little tool allows you to manage the red back led of your Thinkpad.
 
 ## Build
 
