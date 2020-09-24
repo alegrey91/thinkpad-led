@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/binary"
-	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -24,7 +23,7 @@ blink → to make it blink
 const programName string = "thinkpad-led"
 const ledSystemFile string = "/sys/kernel/debug/ec/ec0/io"
 const offset int64 = 12
-const version string = "1.0"
+const version string = "1.0.1"
 
 /**
 Write binary instruction into the dedicated file
@@ -33,7 +32,7 @@ to manage red back led of the thinkpad.
 func writeToLed(file *os.File, data *[]byte) (bool, error) {
 	err := binary.Write(file, binary.LittleEndian, data)
 	if err != nil {
-		return false, errors.New("Error binary.Write failed")
+		return false, fmt.Errorf("Error with binary.Write: %s", err)
 	}
 	return true, nil
 }
@@ -128,7 +127,7 @@ func main() {
 		}
 		os.Exit(0)
 	case "help":
-		fmt.Printf("Usage: # %s c̲o̲m̲m̲a̲n̲d̲\nAvailable commands:\non → to enable the led\noff → to disable the led\nblink → to make it blink\n", programName)
+		fmt.Printf("Usage: # %s c̲o̲m̲m̲a̲n̲d̲\nAvailable commands:\non → to enable the led\noff → to disable the led\nblink → to make it blink\nhelp → show this page\nversion → show the version\n", programName)
 		os.Exit(0)
 	case "version":
 		fmt.Printf("%s: v%s\n", programName, version)
