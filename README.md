@@ -13,7 +13,7 @@ go build thinkpad-led.go
 ## Usage
 
 ```bash
-Usage: thinkpad-led c̲o̲m̲m̲a̲n̲d̲
+Usage: # thinkpad-led c̲o̲m̲m̲a̲n̲d̲
 Available commands:
 on → to enable the led
 off → to disable the led
