@@ -18,7 +18,8 @@ Available commands:
 on → to enable the led
 off → to disable the led
 blink → to make it blink
-```
+help → show this page
+version → show the version
 
 ## Credits
 
