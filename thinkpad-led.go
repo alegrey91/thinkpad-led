@@ -128,7 +128,7 @@ func main() {
 		}
 		os.Exit(0)
 	case "help":
-		fmt.Printf("Usage: %s c̲o̲m̲m̲a̲n̲d̲\nAvailable commands:\non → to enable the led\noff → to disable the led\nblink → to make it blink\n", programName)
+		fmt.Printf("Usage: # %s c̲o̲m̲m̲a̲n̲d̲\nAvailable commands:\non → to enable the led\noff → to disable the led\nblink → to make it blink\n", programName)
 		os.Exit(0)
 	case "version":
 		fmt.Printf("%s: v%s\n", programName, version)
