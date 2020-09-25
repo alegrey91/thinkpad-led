@@ -73,7 +73,7 @@ sudo chown root:root thinkpad-led
 Then, you have to reduce access to other users, giving the binary non-write permission.
 
 ```bash
-sudo chmod 711 thinkpad-led
+sudo chmod 511 thinkpad-led
 ```
 
 Finally, you have to set capability to enable access to kernel file.
