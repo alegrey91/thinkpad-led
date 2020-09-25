@@ -26,7 +26,7 @@ version → show the version
 
 ## Persistence
 
-To make this tool available at boot, without setup it at each boot, you can automatically load the kernel module at boot.
+To make this tool available at boot (without setup it each time), you can automatically load the kernel module using the following commands.
 
 What you have to do is to create 2 files to allow the kernel to load the correct module, with right parameters.
 
