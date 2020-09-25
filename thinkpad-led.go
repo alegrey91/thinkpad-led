@@ -23,7 +23,7 @@ blink → to make it blink
 const programName string = "thinkpad-led"
 const ledSystemFile string = "/sys/kernel/debug/ec/ec0/io"
 const offset int64 = 12
-const version string = "1.0.1"
+const version string = "1.0.2"
 
 /**
 Write binary instruction into the dedicated file
@@ -113,17 +113,17 @@ func main() {
 	switch action := allowedArgument; action {
 	case "on":
 		if _, err := doOn(file); err != nil {
-			log.Fatalf("Error with binary.Write in doOn function: %s\n", err)
+			log.Fatalf("Error in doOn function: %s\n", err)
 		}
 		os.Exit(0)
 	case "off":
 		if _, err := doOff(file); err != nil {
-			log.Fatalf("Error with binary.Write in doOff function: %s\n", err)
+			log.Fatalf("Error in doOff function: %s\n", err)
 		}
 		os.Exit(0)
 	case "blink":
 		if _, err := doBlink(file); err != nil {
-			log.Fatalf("Error with binary.Write in doBlink function: %s\n", err)
+			log.Fatalf("Error in doBlink function: %s\n", err)
 		}
 		os.Exit(0)
 	case "help":
