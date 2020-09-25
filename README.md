@@ -1,6 +1,6 @@
 # thinkpad-led
 
-This little tool allows you to manage the red back led of your Thinkpad.
+This little tool allows you to manage the red back led of your **Thinkpad**.
 
 ## Build
 
@@ -40,7 +40,7 @@ ec_sys
 EOF
 ```
 
-### Step 2
+#### Step 2
 
 Add module options under the `/etc/modprobe.d` directory.
 
@@ -57,6 +57,32 @@ Reboot the system.
 ```
 reboot
 ```
+
+## Use without sudo password
+
+**(Do at your own risk)**
+
+To avoid to input the `sudo` password each time, you can set a specific capability. Of course, you have to make it more secure, to avoid some kind of exploitation.
+
+First of all, you have to change the binary ownership to `root`.
+
+```bash
+sudo chown root:root thinkpad-led
+```
+
+Then, you have to reduce access to other users, giving the binary non-write permission.
+
+```bash
+sudo chmod 711 thinkpad-led
+```
+
+Finally, you have to set capability to enable access to kernel file.
+
+```bash
+sudo setcap CAP_DAC_OVERRIDE=ep thinkpad-led
+```
+
+Now, you can use `thinkpad-led` without input the `sudo` password.
 
 ## Credits
 
